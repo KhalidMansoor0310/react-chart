@@ -4,7 +4,9 @@ import BarChart from "./components/BarChart";
 import LineChart from "./components/LineChart";
 import PieChart from "./components/PieChart";
 import Chart from "react-apexcharts";
-import ChartApex from "./components/ChartApex";
+import BarChartApex from "./components/BarChartApex";
+import LineChartApex from "./components/LineChartApex";
+
 import { UserData } from "./Data";
 // import {
 //   Bar,
@@ -84,9 +86,14 @@ function App() {
           <PieChart chartData={userData} />
         </div>
 
-        <h3 className="my-5">Below is the Charts with ApexCharts</h3>
+        <h3 className="my-5">Below is the Bar Charts with ApexCharts</h3>
         <div style={{ width: 700 }} className="col-md-8 m-auto">
-          <ChartApex />
+          <BarChartApex />
+        </div>
+
+        <h3 className="my-5">Below is the Line Charts with ApexCharts</h3>
+        <div style={{ width: 700 }} className="col-md-8 m-auto">
+          <LineChartApex />
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
-function ChartApex() {
+function BarChartApex() {
   return (
     <div>
       {" "}
@@ -37,4 +37,4 @@ function ChartApex() {
   );
 }
 
-export default ChartApex;
+export default BarChartApex;

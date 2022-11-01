@@ -1,4 +1,9 @@
+import { useState } from "react";
 import "./App.css";
+import BarChart from "./components/BarChart";
+import LineChart from "./components/LineChart";
+import PieChart from "./components/PieChart";
+import { UserData } from "./Data";
 // import {
 //   Bar,
 //   BarChart,
@@ -47,11 +52,35 @@ function App() {
   //     fee: 35,
   //   },
   // ];
-
+  const [userData, setUserData] = useState({
+    labels: UserData.map((data) => data.year),
+    datasets: [
+      {
+        label: "Users Gained",
+        data: UserData.map((data) => data.userGain),
+        backgroundColor: ["rgba(75,192,192,1)", "red", "green"],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  });
   return (
     <>
       <div className="container m-auto">
-        <h1 className="text-center">Line Chart in react JS</h1>
+        <h3 className="my-5">Below is the Bar Chart</h3>
+
+        <div style={{ width: 700 }} className="col-md-8 m-auto">
+          <BarChart chartData={userData} />
+        </div>
+        <h3 className="my-5">Below is the Line Chart</h3>
+        <div style={{ width: 700 }} className="col-md-8 m-auto">
+          <LineChart chartData={userData} />
+        </div>
+
+        <h3 className="my-5">Below is the Pie Chart</h3>
+        <div style={{ width: 700 }} className="col-md-8 m-auto">
+          <PieChart chartData={userData} />
+        </div>
         {/* <ResponsiveContainer width="100%" aspect={3}>
         <LineChart
           data={data}
@@ -77,9 +106,9 @@ function App() {
           />
           <Legend />
         </LineChart>
-      </ResponsiveContainer>
+      </ResponsiveContainer> */}
 
-      <ResponsiveContainer aspect={3} width="100%">
+        {/* <ResponsiveContainer aspect={3} width="100%">
         <BarChart width={730} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
@@ -89,8 +118,8 @@ function App() {
           <Bar dataKey="student" fill="#8884d8" />
           <Bar dataKey="fee" fill="#82ca9d" />
         </BarChart>
-      </ResponsiveContainer>
-      <ResponsiveContainer aspect={3} width="100%">
+      </ResponsiveContainer> */}
+        {/* <ResponsiveContainer aspect={3} width="100%">
         <PieChart width={500} height={500}>
           <Pie
             data={data}
@@ -113,7 +142,7 @@ function App() {
             label
           />
         </PieChart>
-      </ResponsiveContainer> */}
+      </ResponsiveContainer>  */}
       </div>
     </>
   );

@@ -3,6 +3,8 @@ import "./App.css";
 import BarChart from "./components/BarChart";
 import LineChart from "./components/LineChart";
 import PieChart from "./components/PieChart";
+import Chart from "react-apexcharts";
+import ChartApex from "./components/ChartApex";
 import { UserData } from "./Data";
 // import {
 //   Bar,
@@ -81,68 +83,11 @@ function App() {
         <div style={{ width: 700 }} className="col-md-8 m-auto">
           <PieChart chartData={userData} />
         </div>
-        {/* <ResponsiveContainer width="100%" aspect={3}>
-        <LineChart
-          data={data}
-          width={400}
-          height={400}
-          margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-        >
-          <CartesianGrid />
-          <XAxis dataKey="name" interval={"preserveStartEnd"} />
-          <YAxis />
-          <Tooltip />
-          <Line
-            dataKey="student"
-            type={"monotone"}
-            stroke="red"
-            activeDot={{ r: 8 }}
-          />
-          <Line
-            dataKey="fee"
-            type={"monotone"}
-            stroke="green"
-            activeDot={{ r: 8 }}
-          />
-          <Legend />
-        </LineChart>
-      </ResponsiveContainer> */}
 
-        {/* <ResponsiveContainer aspect={3} width="100%">
-        <BarChart width={730} height={250} data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="student" fill="#8884d8" />
-          <Bar dataKey="fee" fill="#82ca9d" />
-        </BarChart>
-      </ResponsiveContainer> */}
-        {/* <ResponsiveContainer aspect={3} width="100%">
-        <PieChart width={500} height={500}>
-          <Pie
-            data={data}
-            dataKey="fee"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            fill="#8884d8"
-          />
-          <Pie
-            data={data}
-            dataKey="student"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            innerRadius={60}
-            outerRadius={100}
-            fill="#82ca9d"
-            label
-          />
-        </PieChart>
-      </ResponsiveContainer>  */}
+        <h3 className="my-5">Below is the Charts with ApexCharts</h3>
+        <div style={{ width: 700 }} className="col-md-8 m-auto">
+          <ChartApex />
+        </div>
       </div>
     </>
   );
